@@ -16,9 +16,9 @@ function Hotellisting() {
         setSelectLocation(SelectLocation._id);
     };
 
+    // Get the name of the selected location
     const SelectedLocationName = locationData.find((loc) => loc._id === SelectLocation).name;
-    console.log("Selected Location Name is :", SelectedLocationName); // Output the name of the selected location 
-
+    
     // Filter hotels based on selected location
     const filteredHotels = SelectLocation === 0 
         ? HotelData 

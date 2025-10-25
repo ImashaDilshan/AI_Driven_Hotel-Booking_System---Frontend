@@ -2,6 +2,7 @@
 function LocationsTab(props) {
 
     const handleClick = () => {
+        //console.log("when the tab click:",props.Location);
         props.onClick(props.Location);
     }
 
