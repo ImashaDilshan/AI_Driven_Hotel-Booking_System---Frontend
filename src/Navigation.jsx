@@ -1,14 +1,14 @@
 import { Button } from "./components/ui/button";
 import { Globe } from "lucide-react";
-
+import  { Link } from "react-router";
 
 function Navigation() {
   return (
     <nav className="z-50 bg-black/90 backdrop-blur-md flex items-center justify-between px-4 sm:px-6 text-white py-3 rounded-full mx-4 my-3 relative">
         <div className="flex items-center space-x-8">
-            <a href="/" className="text-xl font-bold">Booking 360</a>
+            <Link to="/" className="text-xl font-bold">Booking 360</Link>
          <div className="hidden md:flex space-x-8">
-            <a href={'/'} className="transition-colors text-sm">Home</a>
+            <Link to='/' className="transition-colors text-sm">Home</Link>
         </div>
         </div>
 
@@ -18,11 +18,11 @@ function Navigation() {
                 En
             </Button>
             <Button variant="outline" size="sm" className="bg-black text-xs text-yellow-300 hover:bg-yellow-500 hover:text-black hidden md:flex">
-                <a href="/login">Login</a>
+                <Link to="/login">Login</Link>
             </Button>
             <Button variant="ghost" size="sm" 
             className="bg-white text-black text-xs hover:bg-yellow-100 text-xs hidden md:flex">
-                <a href="/signup">Sign Up</a>
+                <Link to="/signup">Sign Up</Link>
             </Button>
 
 
