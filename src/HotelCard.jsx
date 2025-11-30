@@ -1,11 +1,16 @@
-import { MapPin, MapPinCheck, Star } from "lucide-react";
+import { Hand, MapPin, MapPinCheck, Star } from "lucide-react";
 import { Button }  from  "./components/ui/button";
+import { Link } from "react-router";
 
 function HotelCard(props) {
+    // const HandleClick = () => {
+    //     const h_id = props.hotel._id;
+    //     console.log("Hotel ID:", h_id);
+    
     return (
         
         
-        <a href="" className="block group relative">
+        <Link to={`/hotels/${props.hotel._id}`} className="block group relative">
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
             <img
              src={props.hotel.image}
@@ -38,7 +43,7 @@ function HotelCard(props) {
 
             </div>
 
-        </a>
+        </Link>
        
     )
 }
