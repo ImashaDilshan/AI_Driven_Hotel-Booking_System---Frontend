@@ -5,6 +5,10 @@ import SignInPage from './pages/login.page.jsx'
 import SignUpPage from './pages/sign-up.page.jsx'
 import { BrowserRouter, Routes,Route } from 'react-router'
 import Homepage from './pages/Home.page.jsx'
+import Rootlayoutpage from './Layouts/root.layout.page.jsx'
+import Notfoundpage from './pages/Not-found-page.jsx'
+import Hotels from './pages/Hotels.page.jsx'
+import Hoteldetails from './pages/Hotel-details.page.jsx'
 
 
 
@@ -13,9 +17,15 @@ createRoot(document.getElementById('root')).render(
 <StrictMode>
   <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/login" element={<SignInPage/>} />
-        <Route path="/signUp" element={<SignUpPage/>} />
+        <Route element={< Rootlayoutpage/>} >
+            <Route path="/" element={<Homepage />} />
+            <Route path="/login" element={<SignInPage/>} />
+            <Route path="/signUp" element={<SignUpPage/>} />
+            <Route path="/hotels" element={<Hotels/>} />
+            <Route path="/hotels/:_id" element={<Hoteldetails/>} />  
+        </Route>
+            <Route path="*" element={<Notfoundpage/>} /> 
+            / Use wildcard operator for 404 page
       </Routes>
   
   </BrowserRouter>

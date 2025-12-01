@@ -3,10 +3,7 @@ import { Button }  from  "./components/ui/button";
 import { Link } from "react-router";
 
 function HotelCard(props) {
-    // const HandleClick = () => {
-    //     const h_id = props.hotel._id;
-    //     console.log("Hotel ID:", h_id);
-    
+   
     return (
         
         
