@@ -1,9 +1,9 @@
-import Navigation from "../Navigation";
+
 
 function Loginpage() {
     return (
         <>
-        <Navigation />
+       
         <div>
             <h1>Login page </h1>
         </div>
