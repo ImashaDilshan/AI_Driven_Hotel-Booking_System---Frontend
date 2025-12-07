@@ -8,7 +8,7 @@ import Homepage from './pages/Home.page.jsx'
 import Rootlayoutpage from './Layouts/root.layout.page.jsx'
 import Notfoundpage from './pages/Not-found-page.jsx'
 import Hotels from './pages/Hotels.page.jsx'
-import Hoteldetails from './pages/Hotel-details.page.jsx'
+import Hoteldetailspage from './pages/Hotel-details.page.jsx'
 
 
 
@@ -22,7 +22,7 @@ createRoot(document.getElementById('root')).render(
             <Route path="/login" element={<SignInPage/>} />
             <Route path="/signUp" element={<SignUpPage/>} />
             <Route path="/hotels" element={<Hotels/>} />
-            <Route path="/hotels/:_id" element={<Hoteldetails/>} />  
+            <Route path="/hotels/:_id" element={<Hoteldetailspage/>} />  
         </Route>
             <Route path="*" element={<Notfoundpage/>} /> 
             / Use wildcard operator for 404 page
