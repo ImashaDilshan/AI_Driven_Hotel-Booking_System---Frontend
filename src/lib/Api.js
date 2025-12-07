@@ -2,6 +2,7 @@
 
 const getAllHotels = async () => {
 
+    try {
         const res = await fetch ("http://localhost:8000/api/HotelData" , {
             method: "GET",
             headers: { "content-Type": "application/json" }
@@ -10,8 +11,12 @@ const getAllHotels = async () => {
             throw new Error ("Failed to fetch hotel data");
         }
         const data = await res.json();
-         //console.log(data);
-        return data; // Return the parsed data
+        //console.log(data);
+        return data; 
+    } catch (error) {
+        console.error("Error fetching hotel data:", error);
+        throw error; 
+    }
 }
 
 export { getAllHotels };
