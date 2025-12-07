@@ -3,6 +3,9 @@ import React from 'react';
 //import HotelCard from './HotelCard';
 //import { HotelData} from './Data';
 import Hotellisting from '../Hotellisting';
+import { Button } from '../components/ui/button';
+import { getAllHotels } from '../lib/Api';
+
 
 
 function Homepage() {
@@ -11,6 +14,7 @@ function Homepage() {
     <>
     
     <Hotellisting />
+    {/* <Button onClick={()=> getAllHotels()}  > Get Hotel Data</Button> */}
    </>
   )
 }
