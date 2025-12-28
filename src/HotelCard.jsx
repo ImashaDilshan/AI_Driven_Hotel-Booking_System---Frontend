@@ -26,7 +26,7 @@ function HotelCard(props) {
                     {props.hotel.rate ?? "No rating"}
                 </span>
                 <span className="text-muted-foreground">
-                     ({props.hotel.reviews ?? "No"} Reviews)
+                     ({props.hotel.reviews.length ?? "No"} Reviews)
                 </span>
             </div>
             <div className="flex items-baseline space-x-2">
