@@ -10,11 +10,13 @@ import Notfoundpage from './pages/Not-found-page.jsx'
 import Hotels from './pages/Hotels.page.jsx'
 import Hoteldetailspage from './pages/Hotel-details.page.jsx'
 
-
+import { store } from './lib/store.js'
+import { Provider } from 'react-redux'
 
 
 createRoot(document.getElementById('root')).render(
 <StrictMode>
+  <Provider store={store}>
   <BrowserRouter>
       <Routes>
         <Route element={< Rootlayoutpage/>} >
@@ -27,8 +29,8 @@ createRoot(document.getElementById('root')).render(
             <Route path="*" element={<Notfoundpage/>} /> 
             / Use wildcard operator for 404 page
       </Routes>
-  
   </BrowserRouter>
+  </Provider>
 </StrictMode>
   
 )
