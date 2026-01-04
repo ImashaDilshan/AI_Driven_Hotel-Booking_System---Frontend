@@ -25,7 +25,7 @@ function Hotellisting() {
         getAllHotels()
             .then((data) => {
                 setHotelData(data);
-                //console.log("Fetched Hotel Data:", data);
+                console.log("Fetched Hotel Data:", data);
             })
             .catch((error) => {
                 //console.error("Error fetching hotel data:", error);
