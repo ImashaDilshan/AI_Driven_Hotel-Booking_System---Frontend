@@ -1,14 +1,20 @@
 import { Button } from "./components/ui/button";
 import { Globe } from "lucide-react";
 import  { Link } from "react-router";
+import { useSelector } from 'react-redux';
 
 function Navigation() {
+
+    const counter = useSelector((state) => state.counter.value);
+  console.log("Counter Value in Navigation:", counter);
+
   return (
     <nav className="z-50 bg-black/90 backdrop-blur-md flex items-center justify-between px-4 sm:px-6 text-white py-3 rounded-full mx-4 my-3 relative">
         <div className="flex items-center space-x-8">
             <Link to="/" className="text-xl font-bold">Booking 360</Link>
          <div className="hidden md:flex space-x-8">
             <Link to='/' className="transition-colors text-sm">Home</Link>
+             <p> {counter}</p>
         </div>
         </div>
 
