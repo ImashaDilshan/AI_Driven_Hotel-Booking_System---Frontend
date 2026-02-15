@@ -9,13 +9,21 @@ import Rootlayoutpage from './Layouts/root.layout.page.jsx'
 import Notfoundpage from './pages/Not-found-page.jsx'
 import Hotels from './pages/Hotels.page.jsx'
 import Hoteldetailspage from './pages/Hotel-details.page.jsx'
-
+import { ClerkProvider } from '@clerk/clerk-react'
 import { store } from './lib/store.js'
 import { Provider } from 'react-redux'
 
 
+// Import your Publishable Key
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+
+if (!PUBLISHABLE_KEY) {
+  throw new Error('Add your Clerk Publishable Key to the .env file')
+}
+
 createRoot(document.getElementById('root')).render(
 <StrictMode>
+ <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
   <Provider store={store}>
   <BrowserRouter>
       <Routes>
@@ -31,6 +39,7 @@ createRoot(document.getElementById('root')).render(
       </Routes>
   </BrowserRouter>
   </Provider>
+  </ClerkProvider>
 </StrictMode>
   
 )
