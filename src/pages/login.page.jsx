@@ -1,29 +1,10 @@
+import { SignIn } from "@clerk/clerk-react";
 
-
-function Loginpage() {
+const SignInPage = () => {
     return (
-        <>
-       
-        <div>
-            <h1>Login page </h1>
-        </div>
-        <div>
-            <form>
-                <label>
-                    Username:   
-                    <input type="text" name="username" />
-                </label>
-                <br />
-                <label>
-                    Password:
-                    <input type="password" name="password" />
-                </label>
-                <br />
-                <input type="submit" value="Login" />
-            </form>
-        </div>
-    </>
+        <main className="px-4 min-h-screen flex items-center justify-center">
+            <SignIn />
+        </main>
     )
-
 }
-export default Loginpage;
+export default SignInPage
