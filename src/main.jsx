@@ -12,6 +12,7 @@ import Hoteldetailspage from './pages/Hotel-details.page.jsx'
 import { ClerkProvider } from '@clerk/clerk-react'
 import { store } from './lib/store.js'
 import { Provider } from 'react-redux'
+import ProtectLayout from './Layouts/protect.layout.jsx'
 
 
 // Import your Publishable Key
@@ -32,7 +33,9 @@ createRoot(document.getElementById('root')).render(
             <Route path="/login" element={<SignInPage/>} />
             <Route path="/signUp" element={<SignUpPage/>} />
             <Route path="/hotels" element={<Hotels/>} />
-            <Route path="/hotels/:_id" element={<Hoteldetailspage/>} />  
+            <Route element={<ProtectLayout />}>
+              <Route path="/hotels/:_id" element={<Hoteldetailspage/>} />
+            </Route>
         </Route>
             <Route path="*" element={<Notfoundpage/>} /> 
             / Use wildcard operator for 404 page
