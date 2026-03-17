@@ -7,3 +7,19 @@ function Notfoundpage() {
   );
 }
 export default Notfoundpage;
+// import { useUser } from "@clerk/clerk-react";
+
+// const AdminProtect_layout = () => {
+
+
+//     const { user } = useUser();
+//     console.log("Admin User Infomations :", user);
+
+
+//     return (
+//         <div>
+//             <h1>Admin Protect Layout</h1>
+//         </div>
+//     );
+// }
+// export default AdminProtect_layout;
