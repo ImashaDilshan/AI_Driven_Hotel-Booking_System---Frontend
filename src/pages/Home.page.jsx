@@ -5,20 +5,23 @@ import React from 'react';
 import Hotellisting from '../Hotellisting';
 import { Button } from '../components/ui/button';
 import { getAllHotels } from '../lib/Api';
+import Hero from '../Hero';
 
 
 
 
 function Homepage() {
 
-
-
   return (
     <>
-   
-    <Hotellisting />
-    
-    {/* <Button onClick={()=> getAllHotels()}  > Get Hotel Data</Button> */}
+    <main>
+       <div className="relative">
+        <Hero />
+       </div >
+       <div>
+        <Hotellisting />
+       </div>
+    </main>
    </>
   )
 }
