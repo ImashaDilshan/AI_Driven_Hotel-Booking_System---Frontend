@@ -5,15 +5,42 @@ import { MapPin, Star } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Wifi , Hotel , TvMinimalPlay , Coffee } from "lucide-react";
+import { useGetHotelByIdQuery } from "../lib/nApi";
+import { Spinner } from "@/components/ui/spinner";
+
+
 
 const Hoteldetailspage = () => {
 
   const params = useParams(); // Access the dynamic parameters from the URL
   const hotelId = params._id; // string
 
-  const hotel = HotelData.find((h) => h._id == hotelId); // h._id is number, hotelId is string
-  
-   return (
+  // const hotel = HotelData.find((h) => h._id == hotelId); // h._id is number, hotelId is string
+
+  const{
+    data: hotel,
+    isLoading,
+    isError,
+    error
+  } = useGetHotelByIdQuery(hotelId);
+
+  if (isLoading) {
+     return (
+            <div className="flex flex-col items-center justify-center min-h-[200px]">
+                <Spinner className="h-8 w-8 text-primary animate-spin" />
+                <p>Loading...</p>
+            </div>
+        ); 
+  }
+  if (isError) {
+    return (
+        <div className="text-red-500">
+            <p>Error loading hotel data: {error?.message || "Unknown error occurred."}</p>
+        </div>
+    );
+  }
+
+  return (
        <main className="px-4">
           <div className ="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
@@ -50,7 +77,7 @@ const Hoteldetailspage = () => {
                     <Star className="h-5 w-5 fill-primary text-primary" />
                     <span className="font-bold">{hotel?.rate ?? "No rating"}</span>
                     <span className="text-muted-foreground">
-                      ({hotel?.reviews ?? "No"} Reviews)
+                      ({hotel?.reviews.length ?? "No"} Reviews)
                     </span>
                 </div>
                 <p className="text-muted-foreground">{hotel.description}</p> 
