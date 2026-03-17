@@ -13,6 +13,8 @@ import { ClerkProvider } from '@clerk/clerk-react'
 import { store } from './lib/store.js'
 import { Provider } from 'react-redux'
 import ProtectLayout from './Layouts/protect.layout.jsx'
+import AdminProtect_layout from './Layouts/AdminProtect_layout.jsx'
+import CreateHotels from './pages/AdminPages/Hotel-create-page.jsx'
 
 
 // Import your Publishable Key
@@ -35,6 +37,9 @@ createRoot(document.getElementById('root')).render(
             <Route path="/hotels" element={<Hotels/>} />
             <Route element={<ProtectLayout />}>
               <Route path="/hotels/:_id" element={<Hoteldetailspage/>} />
+              <Route element={<AdminProtect_layout/>}>
+                <Route path="/admin/create-hotel" element={<CreateHotels/>} />
+              </Route>
             </Route>
         </Route>
             <Route path="*" element={<Notfoundpage/>} /> 
