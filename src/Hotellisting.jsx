@@ -109,10 +109,9 @@ function Hotellisting() {
         );
     }
 
-    return(
-         <section className="px-8 py-8 lg:py-8">
+    return(  
         <section className="px-8 py-8 lg:py-8">
-            <div className="mb-12">
+            <div className="mb-15">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
                     Top Trending Hotels Worlwide
                 </h2>
@@ -128,7 +127,7 @@ function Hotellisting() {
                         console.error("Failed to add location:", error);
                     } 
                    
-                }}>
+                 }}>
                     <PlusCircle className="mr-2 h-4 w-4" /> Add Location    
                 </Button>
             </div>
@@ -146,7 +145,6 @@ function Hotellisting() {
                 })}
             </div>               
         </section>
-    </section>
     )
     
 }
