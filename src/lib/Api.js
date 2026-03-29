@@ -5,7 +5,10 @@ const getAllHotels = async () => {
     try {
         const res = await fetch ("http://localhost:8000/api/HotelData" , {
             method: "GET",
-            headers: { "content-Type": "application/json" }
+            headers: { 
+                "content-Type": "application/json"
+                // "Authorization": `Bearer ${localStorage.getItem("token")}` // Include the token in the Authorization header
+             }
         });
         if (!res.ok) {
             throw new Error ("Failed to fetch hotel data");
@@ -20,6 +23,40 @@ const getAllHotels = async () => {
 }
 
 export { getAllHotels };
+
+
+const getAllLocations = async () => {
+
+    try {
+        const res = await fetch ("http://localhost:8000/api/locations" , {
+            method: "GET",
+            headers: { "content-Type": "application/json" }
+        });
+        if (!res.ok) {
+            throw new Error ("Failed to fetch Locations data");
+        }
+        const data = await res.json();
+        //console.log(data);
+        return data; 
+    } catch (error) {
+        console.error("Error fetching hotel data:", error);
+        throw error; 
+    }
+}
+
+export { getAllLocations };
+
+
+
+
+
+
+
+
+
+
+
+
 
 //     // then catch chain patten (old)
 
